@@ -4,7 +4,10 @@ RSpec.describe DeclarativeFraction do
   end
 
   it 'does something useful' do
-    DeclareFraction do
+    half = DeclareFraction do
+      numerator 1
+      denominator 2
     end
+    expect(half).to eq Rational(1, 2)
   end
 end
