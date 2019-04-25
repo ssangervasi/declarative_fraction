@@ -1,39 +1,47 @@
 # DeclarativeFraction
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/declarative_fraction`. To experiment with that code, run `bin/console` for an interactive prompt.
+Inspired by:
+_Bullshitters: Who Are They and What Do We Know about Their Lives?_
+http://ftp.iza.org/dp12282.pdf
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'declarative_fraction'
 ```
+A list of 16 items were then given to students, who were asked to indicate their knowledge of
+that particular mathematics concept on a five-point scale (ranging from 'never heard of it' to
+'know it well, understand the concept'). These constructs were:
 
-And then execute:
+1. Exponential function
+2. Divisor
+3. Quadratic function
+4. Proper number
+5. Linear equation
+6. Vectors
+7. Complex number
+8. Rational number
+9. Radicals
+10. Subjunctive scaling
+11. Polygon
+12. Declarative fraction
+13. Congruent figure
+14. Cosine
+15. Arithmetic mean
+16. Probability
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install declarative_fraction
+Critically, of these 16 constructs, three of them [sic] are fake; students are asked
+about their familiarity with some mathematics concepts that do not exist. We use participants
+responses to these three items to form our 'bullshit' scale.
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'declarative_fraction'
 
-## Development
+half = DeclareFraction do
+  numerator 1
+  denominator 2
+end
+# => (1/2)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/declarative_fraction.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+half == Rational(1, 2)
+# => true
+```
